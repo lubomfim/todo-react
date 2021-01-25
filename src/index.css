@@ -1,0 +1,27 @@
+* {
+  border: none;
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  appearance: none;
+  border-radius: 0px;
+  touch-action: manipulation;
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background-color: #2a9d8f;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+input, ::placeholder {
+    font-family: 'Raleway',
+    sans-serif;
+}
+
