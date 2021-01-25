@@ -33,8 +33,8 @@ class Input extends Component {
     }
 
     saveIt(e) {
-      e.preventDefault()
-      this.setState({date: new Date()})
+      if(this.state.task !== '') {
+        this.setState({date: new Date()})
 
       let task = [{...this.state}]
 
@@ -48,6 +48,10 @@ class Input extends Component {
       }
 
       this.clear()
+      } else {
+        e.preventDefault()
+        alert('Insira algo')
+      }
     }
 
     clear() {
