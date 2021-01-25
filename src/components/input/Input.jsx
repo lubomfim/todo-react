@@ -59,7 +59,7 @@ class Input extends Component {
   render() {
      return (
     <form className="todo__form">
-      <input type="text"maxLength={30} className="todo__input" placeholder="Insert your task" onChange={e => this.setTask(e.target.value)} value={this.state.task}/>
+      <input type="text"maxLength={30} className="todo__input" placeholder={this.state.secreto ? 'Insert your secret task' : 'Insert your task'} onChange={e => this.setTask(e.target.value)} value={this.state.task}/>
       <input type="submit" value="Save it"className="todo__submit" onClick={this.saveIt}/>
       <img src={this.state.secreto ? secretImgSet : secretImg} alt="secret icon"className={`todo__secret-icon`} onMouseEnter={_ => this.mensagemSecret(true)} onMouseLeave={_ => this.mensagemSecret(false)} onClick={e => this.setSecreto(e.target)}/>
       <p className="todo__secret-msg" style={{opacity: this.state.mensagemSecret}}>Click for insert a {this.state.secreto ? 'normal' : 'secret'} task</p>
