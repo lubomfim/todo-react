@@ -10,7 +10,8 @@ class Input extends Component {
       this.state = {
         task: '',
         mensagemSecret: '0',
-        secreto: false
+        secreto: false,
+        date: new Date()
       }
 
       this.mensagemSecret = this.mensagemSecret.bind(this)
@@ -33,6 +34,8 @@ class Input extends Component {
 
     saveIt(e) {
       e.preventDefault()
+      this.setState({date: new Date()})
+
       let task = [{...this.state}]
 
       if (localStorage.getItem('tasks') && localStorage.getItem('tasks').length > 0) {
@@ -42,7 +45,6 @@ class Input extends Component {
         localStorage.setItem('tasks', JSON.stringify(taskGuardasAtualizadas))
       } else {
         localStorage.setItem('tasks', JSON.stringify(task))
-        console.log('aqui')
       }
 
       this.clear()

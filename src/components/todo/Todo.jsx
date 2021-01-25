@@ -6,11 +6,13 @@ import Input from '../input/Input'
 
 const Todo = props => {
   return (
-    <div className="todo">
-      <h1 className="todo__title">To-Do</h1>
-      <Input />
+    <React.Fragment>
+      <div className="todo">
+        <h1 className="todo__title">To-Do</h1>
+        <Input /> 
+      </div>
       <Tasks />
-    </div>
+    </React.Fragment>
   )
 }
 

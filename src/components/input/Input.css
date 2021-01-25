@@ -1,5 +1,8 @@
 .todo__form {
   position: relative;
+  width: 560px;
+  max-width: 95%;
+  margin: 0 auto;
 }
 
 .todo__input {
@@ -38,7 +41,7 @@
 .todo__submit {
   margin: 0 auto;
   display: block;
-  margin-top: 23px;
+  margin: 23px auto 100px;
 
   font-size: 18px;
   color: #264653;

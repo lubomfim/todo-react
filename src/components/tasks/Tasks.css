@@ -1,0 +1,18 @@
+.todo__list {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(6, 185px);
+  gap: 20px;
+
+}
+
+
+.todo__item {
+  background-color: #E9C46A;
+  padding: 20px 17px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #264653;
+  cursor: pointer;
+}
