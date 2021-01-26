@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './Tasks.css'
 
-const Tasks = props => {
+import ModalTask from './ModalTask'
+
+class Tasks extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      taskClicada: {},
+      abrirModal: false
+    }
+  }
+  alimentar(valor) {
+    this.setState({taskClicada: valor, abrirModal: true})
+  }
+
+  render() {
   let elementosTarefa = []
 
   if (localStorage.getItem('tasks') && localStorage.getItem('tasks').length > 0) {
@@ -23,16 +38,20 @@ const Tasks = props => {
         nome = 'Secret task'
       }
       return (
-        elementosTarefa.push(<li key={index} className="todo__item">{nome}</li>)
+        elementosTarefa.push(<li key={index} className="todo__item" onClick={_ => this.alimentar(element)}>{nome}</li>)
       )
     })
   }
 
-  return (
-   <ul className="todo__list"> 
-     {elementosTarefa}
-   </ul>
-  )
+   return (
+      <React.Fragment>
+      <ul className="todo__list"> 
+        {elementosTarefa}
+      </ul>
+      <ModalTask elementoClicado={this.state.taskClicada} abrirModal={this.state.abrirModal} />  
+    </React.Fragment>
+   )
+  }
 }
 
 export default Tasks
