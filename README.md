@@ -18,5 +18,6 @@ Nesse aplicativo poderemos excluir, alterar e adicionar tarefas, além das suas 
 - [x] Estilizar componentes
 - [x] Formulário pronto
 - [x] Tasks sendo guardadas no LocalStorage
-- [ ] Criar modal de task
-- [ ] Desenvolver função de exclusão de task
+- [x] Criar modal de task
+- [x] Desenvolver função de exclusão de task
+- [ ] Adicionar opção de alteração de task
