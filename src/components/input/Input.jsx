@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
 import './Input.css'
+
 import secretImg from '../../assets/img/secret.svg'
 import secretImgSet from '../../assets/img/secretSet.svg'
+
+import Tasks from '../tasks/Tasks'
 
 class Input extends Component {
     constructor(props) {
       super(props)
 
       this.state = {
+        id: Date.now(),
         task: '',
-        mensagemSecret: '0',
         secreto: false,
-        date: new Date()
+        date: new Date(),
+        excluido: false
       }
 
       this.mensagemSecret = this.mensagemSecret.bind(this)
@@ -33,6 +37,7 @@ class Input extends Component {
     }
 
     saveIt(e) {
+      e.preventDefault()
       if(this.state.task !== '') {
         this.setState({date: new Date()})
 
@@ -43,33 +48,42 @@ class Input extends Component {
         let taskGuardasAtualizadas = [...tasksGuardadas, ...task]
         
         localStorage.setItem('tasks', JSON.stringify(taskGuardasAtualizadas))
+
       } else {
         localStorage.setItem('tasks', JSON.stringify(task))
       }
 
       this.clear()
       } else {
-        e.preventDefault()
         alert('Insira algo')
       }
     }
 
+
+
     clear() {
       this.setState({
+        id: Date.now(),
         task: '',
-        mensagemSecret: '0',
-        secreto: false
+        secreto: false,
+        date: new Date(),
+        excluido: false
       })
     }
 
   render() {
      return (
-    <form className="todo__form">
+    <React.Fragment>
+      <form className="todo__form">
       <input type="text"maxLength={30} className="todo__input" placeholder={this.state.secreto ? 'Insert your secret task' : 'Insert your task'} onChange={e => this.setTask(e.target.value)} value={this.state.task}/>
       <input type="submit" value="Save it"className="todo__submit" onClick={this.saveIt}/>
       <img src={this.state.secreto ? secretImgSet : secretImg} alt="secret icon"className={`todo__secret-icon`} onMouseEnter={_ => this.mensagemSecret(true)} onMouseLeave={_ => this.mensagemSecret(false)} onClick={e => this.setSecreto(e.target)}/>
       <p className="todo__secret-msg" style={{opacity: this.state.mensagemSecret}}>Click for insert a {this.state.secreto ? 'normal' : 'secret'} task</p>
    </form>
+      <Tasks />
+
+    </React.Fragment>
+   
     )
   }
    

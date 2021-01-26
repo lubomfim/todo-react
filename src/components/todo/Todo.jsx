@@ -1,7 +1,6 @@
 import React from 'react'
 import './Todo.css'
 
-import Tasks from '../tasks/Tasks'
 import Input from '../input/Input'
 
 const Todo = props => {
@@ -11,7 +10,6 @@ const Todo = props => {
         <h1 className="todo__title">To-Do</h1>
         <Input /> 
       </div>
-      <Tasks />
     </React.Fragment>
   )
 }
