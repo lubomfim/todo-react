@@ -1,18 +1,22 @@
-# To-do App
+# To-do App 🎉
 
 Aplicativo de TODO, feito para guardar suas tarefas diárias.
 
-## Objetivo da aplicação
+## Objetivo da aplicação ✨
 
 Nesse aplicativo poderemos excluir, alterar e adicionar tarefas, além das suas tarefas ficarem guardadas.
 
-## Tecnologias Utilizadas
+## Live 🌐
+
+[To-do App](https://todo-react.lubomfim.vercel.app/)
+
+## Tecnologias Utilizadas 🚀
 
 - HTML
 - CSS
 - JavaScript (React)
 
-## Etapas do projeto
+## Etapas do projeto 💫
 
 - [x] Estrutura de pastas
 - [x] Estilizar componentes
