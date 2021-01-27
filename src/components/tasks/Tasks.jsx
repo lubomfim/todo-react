@@ -61,7 +61,7 @@ class Tasks extends Component {
     let taskClicada = this.state.taskClicada
     let novoValor = this.state.textoAlterado
 
-    this.setState({taskClicada: {task: novoValor, date: new Date(), id: this.state.taskClicada.id}, mostrarEntrada: false})
+    this.setState({taskClicada: {task: novoValor, date: new Date(), id: this.state.taskClicada.id}, mostrarEntrada: false, textoAlterado: ''})
 
     storageTasks.forEach((element, indice) => {
       if (element.id === taskClicada.id) {
@@ -71,6 +71,7 @@ class Tasks extends Component {
 
       }
     })
+
   }
 
   render() {
