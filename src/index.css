@@ -21,7 +21,7 @@ body {
   padding-bottom: 200px;
 }
 
-input, ::placeholder {
+input, ::placeholder, button {
     font-family: 'Raleway',
     sans-serif;
 }

@@ -18,7 +18,7 @@
 .todo__modal-content {
   background-color: #E9C46A;
   width: 522px;
-  height: 198px;
+  height: 250px;
   max-width: 95%;
   
   border-radius: 3px;
@@ -28,9 +28,34 @@
   flex-direction: column;
 }
 
+.todo__modal-alteracao {
+  display: none;
+  opacity: 0;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+}
+
 .show {
   opacity: 1;
   display: flex;
+}
+
+.todo__modal-input {
+  padding: 5px 15px;
+  border-radius: 3px;
+  font-size: 20px;
+  width: 70%;
+  margin-bottom: 10px;
+}
+
+.todo__modal-save {
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #264653;
+  color: #E9C46A
 }
 
 .todo__modal-buttons {
@@ -38,7 +63,7 @@
   margin-right: 30px;
 }
 
-.todo__modal-excluir {
+.todo__modal-excluir, .todo__modal-change {
   margin-right: 15px;
   cursor: pointer;
 }
